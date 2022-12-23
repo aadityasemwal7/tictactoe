@@ -1,10 +1,13 @@
 import React, { cloneElement } from "react"
 import "../App"
 
-export default function Square() {
+export default function Square(props) {
+    
     return(
-        <div className="Square" style={{
-            border: '2px solid', 
+        <div className="Square" 
+        onClick={props.onClick}
+        style={{
+            border: "2px solid", 
             height: "100px", 
             width: "100%",
             display: "flex",
@@ -12,7 +15,7 @@ export default function Square() {
             alignItems: "center"
             }}>
         
-            <h5>X</h5>
+            <h5>{props.value}</h5>
         </div>
     )
 }
